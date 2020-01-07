@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (4.9.1)
+  - CodableAlamofire (1.1.2):
+    - Alamofire (~> 4.0)
+  - PromiseKit (6.12.0):
+    - PromiseKit/CorePromise (= 6.12.0)
+    - PromiseKit/Foundation (= 6.12.0)
+    - PromiseKit/UIKit (= 6.12.0)
+  - PromiseKit/CorePromise (6.12.0)
+  - PromiseKit/Foundation (6.12.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.12.0):
+    - PromiseKit/CorePromise
+  - SwiftyBeaver (1.8.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - CodableAlamofire
+  - PromiseKit
+  - SwiftyBeaver
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CodableAlamofire
+    - PromiseKit
+    - SwiftyBeaver
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  CodableAlamofire: b7adfb2e5e980392014b4b3f3b8b62c01b9de4aa
+  PromiseKit: c06835ba442ce5454ce3cdde470232804a6e4ff8
+  SwiftyBeaver: 3d3e93a12d648bd400b6f2948a7ef128b5b183c7
+
+PODFILE CHECKSUM: 3d4799cfcfccf8d075735edfde5b94b970e0692b
+
+COCOAPODS: 1.8.0.beta.2
