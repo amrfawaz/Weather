@@ -81,7 +81,7 @@ extension MainWeatherListViewController: UITableViewDataSource {
         let city = weatherListViewModel.selectedCities[indexPath.row]
         let cityCell = tableView.dequeueReusableCell(withIdentifier: weatherListViewModel.selectedCityCellIdentifire) as? SelectedCityCell
         cityCell?.delegate = self
-        if indexPath.row == 0 {
+        if city.cityId == 360630 {
             cityCell?.buttonRemoveCity.isHidden = true
         } else {
             cityCell?.buttonRemoveCity.isHidden = false
