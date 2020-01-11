@@ -24,13 +24,13 @@ class Configurations: NSObject {
     static var connectionStatus: ConnectionStatus?
     
 
-    static var UserBaseUrl: URL {
+    static var rootWeatherUrl: URL {
         if Configurations.mode == .development {
-            return URL(string: "http://www.fly365dev.com/")!
+            return URL(string: "http://api.openweathermap.org/data/2.5")!
         } else if Configurations.mode == .production {
-            return URL(string: "https://www.fly365.com/")!
+            return URL(string: "http://api.openweathermap.org/data/2.5")!
         } else {
-            return URL(string: "https://www.fly365stage.com/")!
+            return URL(string: "http://api.openweathermap.org/data/2.5")!
         }
     }
 

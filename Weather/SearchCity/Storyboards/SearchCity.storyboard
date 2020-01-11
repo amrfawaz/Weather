@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RRe-gV-TAp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--City Search View Controller-->
+        <scene sceneID="NyT-JB-euO">
+            <objects>
+                <viewController storyboardIdentifier="CitySearchViewController" id="RRe-gV-TAp" customClass="CitySearchViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RgB-IR-rE9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="zgZ-oq-fhq">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ijd-cZ-8lw"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RRe-gV-TAp" id="ozO-gC-9oR"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NNi-PX-AFf">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="RRe-gV-TAp" id="7HL-ht-6Iv"/>
+                                    <outlet property="delegate" destination="RRe-gV-TAp" id="vdh-U0-22w"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="doF-Zc-b3h">
+                                <rect key="frame" x="182" y="428" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="dWP-ED-io4"/>
+                                    <constraint firstAttribute="height" constant="50" id="h4y-lW-UQ2"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="h9d-Ig-pHw" firstAttribute="bottom" secondItem="NNi-PX-AFf" secondAttribute="bottom" id="5UG-HN-WtN"/>
+                            <constraint firstItem="doF-Zc-b3h" firstAttribute="centerX" secondItem="h9d-Ig-pHw" secondAttribute="centerX" id="7Qm-nq-4bv"/>
+                            <constraint firstItem="NNi-PX-AFf" firstAttribute="leading" secondItem="h9d-Ig-pHw" secondAttribute="leading" id="EfQ-E8-efV"/>
+                            <constraint firstItem="doF-Zc-b3h" firstAttribute="centerY" secondItem="h9d-Ig-pHw" secondAttribute="centerY" id="H3E-TO-yW1"/>
+                            <constraint firstItem="h9d-Ig-pHw" firstAttribute="trailing" secondItem="NNi-PX-AFf" secondAttribute="trailing" id="JJO-R7-ewK"/>
+                            <constraint firstItem="zgZ-oq-fhq" firstAttribute="leading" secondItem="h9d-Ig-pHw" secondAttribute="leading" id="jIR-Ox-wkh"/>
+                            <constraint firstItem="zgZ-oq-fhq" firstAttribute="top" secondItem="h9d-Ig-pHw" secondAttribute="top" id="pin-FT-Uxs"/>
+                            <constraint firstItem="h9d-Ig-pHw" firstAttribute="trailing" secondItem="zgZ-oq-fhq" secondAttribute="trailing" id="vcc-Ay-FCU"/>
+                            <constraint firstItem="NNi-PX-AFf" firstAttribute="top" secondItem="zgZ-oq-fhq" secondAttribute="bottom" id="vpj-xE-RAk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h9d-Ig-pHw"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="doF-Zc-b3h" id="SSy-5N-pXp"/>
+                        <outlet property="searchBar" destination="zgZ-oq-fhq" id="oee-zy-bar"/>
+                        <outlet property="tableView" destination="NNi-PX-AFf" id="hg0-1w-iRl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0pz-Mw-QOl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17" y="98"/>
+        </scene>
+    </scenes>
+</document>

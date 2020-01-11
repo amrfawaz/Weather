@@ -7,17 +7,30 @@
 //
 
 import Foundation
+import RealmSwift
 
-class City: Codable {
-    let id: Int?
-    let name: String?
-    let country: String?
-    let coord: Coordinate?
+
+
+
+class CityRealm: Object, Codable {
+    @objc dynamic var cityId: Int
+    @objc dynamic var name: String?
+    @objc dynamic var country: String?
+    dynamic var isSelected: Bool = false
+    dynamic var daysWeather: [WeatherResponse]?
+    @objc dynamic var coord: CoordinateRealm?
     
+    private enum CodingKeys: String, CodingKey {
+        case cityId = "id"
+        case name
+        case country
+        case coord
+    }
+
 }
 
-
-struct Coordinate: Codable {
-    let lon: Double?
-    let lat: Double?
+class CoordinateRealm: Object, Codable {
+    @objc dynamic var lon: Double = 0.0
+    @objc dynamic var lat: Double = 0.0
 }
+

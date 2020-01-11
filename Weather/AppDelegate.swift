@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let realm = try! Realm()
+        
+        let cities = realm.objects(CityRealm.self)
+        if cities.count == 0 {
+            _ = loadJson(fileName: "cities")
+        }
         return true
     }
 
@@ -30,6 +37,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    
+    
+    func loadJson(fileName: String) -> [CityRealm]? {
+        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+            let realm = try! Realm()
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let cities = try decoder.decode([CityRealm].self, from: data)
+                try! realm.write {
+                    realm.add(cities)
+                }
+                return cities
+            } catch {
+                print("error:\(error)")
+            }
+        }
+        return nil
     }
 
 

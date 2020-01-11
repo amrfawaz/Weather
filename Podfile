@@ -9,5 +9,5 @@ target 'Weather' do
   pod 'PromiseKit'
   pod 'CodableAlamofire'
   pod 'SwiftyBeaver'
-
+  pod 'RealmSwift'
 end
